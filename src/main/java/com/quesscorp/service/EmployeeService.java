@@ -55,4 +55,16 @@ public class EmployeeService {
                     }
                 });
     }
+    
+    public Employee updateEmployee(String id, Employee employeeDetails) {
+        return employeeRepository.findById(id)
+                .map(existingEmployee -> {
+                    existingEmployee.setName(employeeDetails.getName());
+                    existingEmployee.setEmail(employeeDetails.getEmail());
+                    existingEmployee.setPosition(employeeDetails.getPosition());
+                    existingEmployee.setSalary(employeeDetails.getSalary());
+                    return employeeRepository.save(existingEmployee);
+                })
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+    }
 }
