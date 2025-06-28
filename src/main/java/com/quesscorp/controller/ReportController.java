@@ -15,7 +15,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/reports")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://quesscorp.suyogshah.com"})
 public class ReportController {
 
     private final ReportService reportService;

@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/departments")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://quesscorp.suyogshah.com"})
 public class DepartmentController {
     
     private final DepartmentService departmentService;
